@@ -24,3 +24,25 @@
     width: 100%;
     text-align: center;
 }
+
+.dalem-kotak > p{
+    margin-bottom: 15px;
+}
+
+.dalem-kotak > a {
+    padding: 15px;
+}
+
+.dalem-kotak > a > button {
+    background-color: #fff;
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.dalem-kotak > a > button:hover {
+    transform: scale(1.1);
+    vertical-align: middle;
+}

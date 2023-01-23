@@ -100,8 +100,7 @@
     transition: .3s;
 }
 
-.isi > button > a{
-    color: #2BCD62;
+.isi > button:hover {
+    transform: scale(1.1);
 }
-
 

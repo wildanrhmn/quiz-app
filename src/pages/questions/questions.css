@@ -55,5 +55,14 @@
     border-radius: 12px;
     font-size: 18px;
     font-weight: 700;
+}
 
+.box-contain {
+    padding-top: 115px;
+}
+
+.box-contain > h5 {
+    padding-bottom: 1rem;
+    font-size: 18px;
+    font-weight: 700;
 }

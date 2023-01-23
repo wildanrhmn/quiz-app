@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import "./questions.css"
 import api from '../../utils/api'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Questions = () => {
@@ -13,6 +13,7 @@ const Questions = () => {
   const [timer, setTimer] = useState('00:00:00')
 
   const Ref = useRef(null)
+  const navigate = useNavigate()
 
   /*=======================TIMER FUNCTION==========================*/
   const getTimeRemaining = (e) => {
@@ -64,13 +65,16 @@ const getDeadTime = () => {
     window.scrollTo(0,0);
   }, [])
 
+
 /* ===================== QUESTION LOGIC ================== */
-  const answeredQuestion = (isCorrect, e) => {
+  const answeredQuestion = (isCorrect) => {
     const nextQuestion = currentQuestion + 1;
 
     if(isCorrect) {
       setScore(score + 1)
+     
     }
+
     if(nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion)
     } else {
@@ -78,7 +82,11 @@ const getDeadTime = () => {
       setNextPage(true)
     }
 
-    e.preventDefault()
+
+  }
+
+  const giveState = () => {
+    navigate('/finished', {state: {totalScore: score}})
   }
 
   /* ======GET DATA FROM API======= */
@@ -112,7 +120,7 @@ const getDeadTime = () => {
 
           {nextPage && (
             <div className='btn-question'>
-              <button><Link to="/finished">Results</Link></button>
+              <button onClick={giveState}><Link to="/finished">Results</Link></button>
            </div>
           )}
 
@@ -129,7 +137,7 @@ const getDeadTime = () => {
             <div className='box-contain'>
               <h5>Yahh, waktu kamu udah Habis :(</h5>
               <div className='btn-question'>
-                  <button><Link to="/finished">Results</Link></button>
+                  <button onClick={giveState}><Link to="/finished">Results</Link></button>
               </div>
             </div>
         </div>

@@ -9,14 +9,12 @@ import Questions from './pages/questions/Questions';
 import Finished from './pages/finished/Finished';
 
 const Router = () => {
+ 
   return (
     <BrowserRouter>
         <Header />
         <Routes>
             <Route path="/" element={<Dashboard />} /> 
-        </Routes>
-        
-        <Routes>
             <Route path="/question-1" element={<Questions />} />
             <Route path="/finished" element={<Finished />} />
         </Routes>

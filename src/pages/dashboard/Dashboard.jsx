@@ -1,10 +1,18 @@
 import React from 'react'
 import "./dashboard.css"
 import QuizPic from "../../assets/quiz.png"
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 
 const Dashboard = () => {
 
+  const navigate= useNavigate()
+
+  const handleGoToQuestionPage = () => {
+    if(window.confirm("Udah belajar belum dek?") === true) {
+        navigate("/question-1")  
+    }
+  }
   return (
     <section className='section container'>
         <div className='grid dashboard-grid'>
@@ -24,12 +32,12 @@ const Dashboard = () => {
               <div className='info-detail'>
                 <div className='isi'>
                   <h5>Number of Questions</h5>
-                  <p>2</p>
+                  <p>10</p>
                   <h5>Difficulty</h5>
                   <p>Normal</p>
                   <h5>Type</h5>
                   <p>True or False</p>
-                 <button><Link to="question-1">Begin</Link></button>
+                 <button onClick={handleGoToQuestionPage}>Begin</button>
                 </div>
               </div>
             </div>
