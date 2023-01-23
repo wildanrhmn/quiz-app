@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./questions.css"
 import api from '../../utils/api'
 import { Link } from 'react-router-dom'
+import Timer from '../../components/timer/Timer'
 
 const Questions1 = () => {
   const [questions, setQuestions] = useState([])
@@ -43,6 +44,7 @@ const Questions1 = () => {
   return (
     <section className='section container'>
       <div className='container-question'>
+        <Timer />
       {questions?.map((data, index) => {
         return(
           <div className='data-value'>
