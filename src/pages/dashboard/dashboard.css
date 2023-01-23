@@ -1,0 +1,107 @@
+.dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.left > h3 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.left > p {
+    font-size: 20px;
+    color: #1e1e1e;
+    line-height: 29px;
+    max-width: 90%;
+}
+
+.left > a > button {
+    padding: 20px 45px;
+    border-radius: 12px;
+    background-color: #2BCD62;
+    color: #fff;
+    column-gap: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.left > a > button:hover {
+    border: 2px solid #2BCD62;
+    background-color: #fff;
+    color: #2BCD62;
+}
+
+.right > img {
+    z-index: -1;
+    width: 750px;
+    animation: muter__muter 15s infinite;
+}
+
+@keyframes muter__muter {
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.focused {
+    margin-top: 3rem;
+}
+
+.focused > h3 {
+    font-size: 45px;
+    text-align: center;
+}
+
+.information-wrapper {
+    width: 400px;
+    height: 400px;
+    border-radius: 12px;
+    background-color: #2BCD62;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.info-detail {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.isi > * {
+    padding: 8px 0;
+}
+
+.isi > h5, p {
+    color: #fff;
+}
+
+.isi > p {
+    font-size: 14px;
+}
+
+.isi > h5 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.isi > button {
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+.isi > button > a{
+    color: #2BCD62;
+}
+
+

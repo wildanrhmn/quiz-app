@@ -1,0 +1,26 @@
+.container-wrapper {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.kotak {
+    width: 500px;
+    height: 500px;
+    background-color: #2BCD62;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    position: absolute;
+    border-radius: 12px;
+}
+
+.dalem-kotak{
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}

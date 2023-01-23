@@ -1,0 +1,45 @@
+.container-question {
+    height: 100vh;
+    margin: auto;
+    padding-top: 225px;                                              
+}
+
+.container-question > *,
+.data-value > * {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.data-value > h5 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 29px;
+    color: #2BCD62;
+}
+
+.data-value > p,
+.container-question > p {
+    color: #1e1e1e;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.btn-question {
+    display: flex;
+    gap: 0 2rem;
+    justify-content: center;
+}
+
+.btn-question button {
+    width: 150px;
+    height: 60px;
+    background-color: #2BCD62;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 12px;
+    gap: 2rem;
+}
+
+.btn-question a {
+    color: #fff;
+}
