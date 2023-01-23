@@ -2,6 +2,7 @@
     height: 100vh;
     margin: auto;
     padding-top: 225px;                                              
+    position: relative;
 }
 
 .container-question > *,
@@ -42,4 +43,17 @@
 
 .btn-question a {
     color: #fff;
+}
+
+.timer-container {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 15%;
+    background-color: #2BCD62;
+    width: 150px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+
 }

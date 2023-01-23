@@ -5,7 +5,7 @@ import Header from './components/header/header';
 import Footer from './components/footer/Footer'
 
 import Dashboard from './pages/dashboard/Dashboard';
-import Questions1 from './pages/questions/Questions1';
+import Questions from './pages/questions/Questions';
 import Finished from './pages/finished/Finished';
 
 const Router = () => {
@@ -17,7 +17,7 @@ const Router = () => {
         </Routes>
         
         <Routes>
-            <Route path="/question-1" element={<Questions1 />} />
+            <Route path="/question-1" element={<Questions />} />
             <Route path="/finished" element={<Finished />} />
         </Routes>
         <Footer />
