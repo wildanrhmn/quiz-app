@@ -10,9 +10,9 @@ const api= (() => {
 
         return response.data.results
     }
-
     return {
-        getQuestions
+        getQuestions,
+  
     }
 })()
 

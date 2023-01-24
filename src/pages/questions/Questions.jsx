@@ -29,7 +29,7 @@ const Questions = () => {
 const getDeadTime = () => {
   let deadline = new Date();
 
-  deadline.setSeconds(deadline.getSeconds() + 10);
+  deadline.setSeconds(deadline.getSeconds() + 60);
   return deadline;
 }
 
@@ -44,13 +44,11 @@ const getDeadTime = () => {
               (minutes > 9 ? minutes : '0' + minutes) + ':'
               + (seconds > 9 ? seconds : '0' + seconds)
           )
-      } 
-
-      
+      }  
     }
     const clearTimer = (e) => {
   
-      setTimer('00:00:10');
+      setTimer('00:01:00');
   
       if (Ref.current) clearInterval(Ref.current);
       const id = setInterval(() => {
@@ -70,9 +68,8 @@ const getDeadTime = () => {
   const answeredQuestion = (isCorrect) => {
     const nextQuestion = currentQuestion + 1;
 
-    if(isCorrect) {
+    if(isCorrect === "True") {
       setScore(score + 1)
-     
     }
 
     if(nextQuestion < questions.length) {
@@ -81,7 +78,6 @@ const getDeadTime = () => {
       showCorrect(true)
       setNextPage(true)
     }
-
 
   }
 
@@ -113,8 +109,15 @@ const getDeadTime = () => {
         })[currentQuestion]}
           {!nextPage && (
             <div className='btn-question'>
-              <button onClick={() => answeredQuestion(true)}>TRUE</button>
-              <button onClick={() => answeredQuestion(false)}>FALSE</button>
+              {questions?.map((isCorrect) => {
+                  return(
+                    <div className='btn-question'>
+                      <button onClick={() => answeredQuestion(isCorrect.correct_answer)}>TRUE</button>
+                      <button onClick={() => answeredQuestion(isCorrect.incorrect_answers[0])}>FALSE</button>
+                      {console.info(questions)}
+                    </div>
+                  )
+              })[currentQuestion]}
            </div>
           )}
 
