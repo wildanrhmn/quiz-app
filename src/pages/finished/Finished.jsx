@@ -13,7 +13,7 @@ const Finished = () => {
                 <div className='kotak'>
                     <div className='dalem-kotak'>
                         <p>You have {location.state.totalScore} correct answers!</p>
-                       <Link to="/">
+                       <Link to="/dashboard">
                         <button>Main Menu</button>
                         </Link>
                        <Link to="/question-1">

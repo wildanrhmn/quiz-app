@@ -2,9 +2,18 @@ import React from 'react'
 import "./dashboard.css"
 import QuizPic from "../../assets/quiz.png"
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 
 const Dashboard = () => {
+
+  const [authenticated, setauthenticated] = useState(null);
+   useEffect(() => {
+    const loggedInUser = localStorage.getItem("authenticated");
+    if (loggedInUser) {
+      setauthenticated(loggedInUser);
+    }
+  }, []);
 
   const navigate= useNavigate()
 
@@ -13,6 +22,10 @@ const Dashboard = () => {
         navigate("/question-1")  
     }
   }
+
+  if(!authenticated) {
+    navigate("/")
+  }else{
   return (
     <section className='section container'>
         <div className='grid dashboard-grid'>
@@ -44,6 +57,7 @@ const Dashboard = () => {
         </div>
     </section>
   )
+  }
 }
 
 export default Dashboard

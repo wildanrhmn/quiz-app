@@ -1,0 +1,72 @@
+.login-section {
+    height: 100vh;
+    background-color: #2BCD62;
+}
+
+.login-form-section {
+    padding: 0 50px;
+
+}
+
+.login-form-section {
+    width: 450px;
+    height: 500px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.login-form-section h5 {
+    color: #2BCD62;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.login-form-section label {
+    text-align: center;
+    font-size: 14px;
+    color: #2BCD62;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+}
+
+.login-form-section input {
+    width: 100%;
+    border-width: 0 0 1px;
+    height: 25px;
+    color: #1e1e1e;
+    outline: none;
+    background-color: #fff;
+    overflow-x: hidden ; 
+}
+
+.login-form-section button {
+    width: 130px;
+    height: 70px;
+    background-color: #2BCD62;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.login-form-section button:hover {
+    transform: scale(1.1);
+    border: 2px solid #2BCD62;
+    color: #2BCD62;
+    background-color: #fff;
+}
+
+.btn-wrapper {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
