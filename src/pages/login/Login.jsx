@@ -2,12 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import "./login.css"
 import { useNavigate } from 'react-router-dom'
-
+import Loader from '../../components/loader/Loader'
 
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [dataUsers, setDataUsers] = useState([])
+  const [loaderVisible, setLoaderVisible] = useState(false)
 
   // eslint-disable-next-line
   const [authenticated, setAuthenticated] = useState(localStorage
@@ -15,8 +16,8 @@ const Login = () => {
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault()
+    setLoaderVisible(!loaderVisible)
     const akun = dataUsers.find((user) => user.username === username)
-    
     setTimeout(() => {
       if(akun && akun.password === password) {
         setAuthenticated(true)
@@ -33,8 +34,9 @@ const Login = () => {
     .catch((err) => console.info(err))
   },[])
   
-  return (
-    <section className='login-section'>
+  if(loaderVisible === false) {
+    return (
+      <section className='login-section'>
       <div className='login-form-section'>
           <h5>Quiz App</h5>
           <form onSubmit={(e) => handleLogin(e)}>
@@ -55,6 +57,15 @@ const Login = () => {
       </div>
     </section>
   )
+}
+
+return(
+  <section className='login-section'>
+    <div className='login-loader'>
+      <Loader isVisible={loaderVisible} />
+    </div>
+  </section>
+)
 }
 
 export default Login

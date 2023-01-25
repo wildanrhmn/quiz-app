@@ -1,16 +1,17 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 /* HEADER FOOTER */
-import Header from './components/header/header';
-import Footer from './components/footer/Footer'
+import Layout from './components/layout/Layout';
 
 import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Questions from './pages/questions/Questions';
 import Finished from './pages/finished/Finished';
 
+import Loader from './components/loader/Loader';
+
 const Router = () => {
- 
+
   return (
     <BrowserRouter>
         <Routes>
@@ -18,12 +19,12 @@ const Router = () => {
         </Routes>
 
         <>
-    
+        <Layout />
           <Routes>
-              <Route element={<Header />} />
               <Route path="/dashboard" element={<Dashboard />} /> 
               <Route path="/question-1" element={<Questions />} />
               <Route path="/finished" element={<Finished />} />
+              <Route path="/loader" element={<Loader />} />
           </Routes>
 
         </>

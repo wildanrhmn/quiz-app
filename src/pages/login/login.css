@@ -70,3 +70,17 @@
     justify-content: center;
     display: flex;
 }
+
+.login-loader {
+        width: 450px;
+        height: 500px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        background-color: #2BCD62;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
