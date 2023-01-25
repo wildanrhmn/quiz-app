@@ -16,7 +16,6 @@ const Dashboard = () => {
   }, []);
 
   const navigate= useNavigate()
-
   const handleGoToQuestionPage = () => {
     if(window.confirm("Udah belajar belum dek?") === true) {
         navigate("/question-1")  

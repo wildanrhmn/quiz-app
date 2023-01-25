@@ -22,7 +22,13 @@ const Login = () => {
       if(akun && akun.password === password) {
         setAuthenticated(true)
         localStorage.setItem("authenticated", true)
+        localStorage.setItem("akunlogin", username)
         navigate("/dashboard")
+      }
+
+      if(akun && akun.password !== password) {
+        setLoaderVisible(false)
+        alert("Password yang anda masukan salah")
       }
     }, 5000)
     
