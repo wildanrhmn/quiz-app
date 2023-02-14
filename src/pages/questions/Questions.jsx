@@ -2,13 +2,17 @@ import React, { useEffect, useState, useRef } from 'react'
 import "./questions.css"
 import api from '../../utils/api'
 import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { scoreContext } from '../../states/Score'
 
 
 const Questions = () => {
+
+  const {score, setScore} = useContext(scoreContext)
+
   const [questions, setQuestions] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [correct, showCorrect] = useState(false)
-  const [score, setScore] = useState(0)
   const [nextPage, setNextPage] = useState(false)
   const [timer, setTimer] = useState('00:00:00')
 
@@ -70,6 +74,7 @@ const getDeadTime = () => {
 
     if(isCorrect === "True") {
       setScore(score + 1)
+      console.info(score)
     }
 
     if(nextQuestion < questions.length) {
@@ -82,7 +87,7 @@ const getDeadTime = () => {
   }
 
   const giveState = () => {
-    navigate('/finished', {state: {totalScore: score}})
+    navigate('/finished')
   }
 
   /* ======GET DATA FROM API======= */
@@ -92,7 +97,11 @@ const getDeadTime = () => {
   }
 
   useEffect(() => {
+    const controller = new AbortController()
     getDataQuestions()
+    return () => {
+      controller.abort()
+    }
   }, [])
   if(!timer.match("00:00:00")) {
     return(
@@ -114,7 +123,6 @@ const getDeadTime = () => {
                     <div className='btn-question'>
                       <button onClick={() => answeredQuestion(isCorrect.correct_answer)}>TRUE</button>
                       <button onClick={() => answeredQuestion(isCorrect.incorrect_answers[0])}>FALSE</button>
-                      {console.info(questions)}
                     </div>
                   )
               })[currentQuestion]}
@@ -128,7 +136,7 @@ const getDeadTime = () => {
           )}
 
             {correct && (
-              <p>You have answered all questions</p>
+              <p>You have answered {score} questions</p>
               )}
               </div>
     </section>

@@ -1,18 +1,18 @@
 import React from 'react'
 import "./finished.css"
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { scoreContext } from '../../states/Score'
 
 const Finished = () => {
-
-    const location = useLocation()
-
+    const {score} = useContext(scoreContext)
   return (
         <section className='section container finish-container'>
             <div className='container-wrapper'>
                 <h3>CONGRATULATIONS!</h3>
                 <div className='kotak'>
                     <div className='dalem-kotak'>
-                        <p>You have {location.state.totalScore} correct answers!</p>
+                        <p>You have {score} correct answers!</p>
                        <Link to="/dashboard">
                         <button>Main Menu</button>
                         </Link>
